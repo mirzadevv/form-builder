@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import InputFormGroup from "./InputFormGroup";
+import InputFormRadio from "./InputFormRadio";
 const FormBuilder = () => {
   const [formData, setFormData] = useState({});
   const handleChange = (e) => {
@@ -40,33 +41,17 @@ const FormBuilder = () => {
         onChange={handleChange}
       />
 
-      <div className="form-elements-container">
-        <p className="caption">what's your gender?</p>
-        <div className="fields">
-          <div className="form-check">
-            <input
-              name="gender"
-              id="gender"
-              type="radio"
-              value="male"
-              className="form-check-input"
-              onChange={handleChange}
-            />
-            <label htmlFor="gender">Male</label>
-          </div>
-          <div className="form-check">
-            <input
-              name="gender"
-              id="gender"
-              type="radio"
-              value="female"
-              className="form-check-input"
-              onChange={handleChange}
-            />
-            <label htmlFor="gender">Female</label>
-          </div>
-        </div>
-      </div>
+      <InputFormRadio
+        name="gender"
+        id="gender"
+        type="radio"
+        caption="What's your gender?"
+        options={[
+          { key: 1, value: "male", label: "Male" },
+          { key: 2, value: "female", label: "Female" },
+        ]}
+      />
+
       <div className="form-group">
         <label for="state" className="caption">
           Which state do you live in?
