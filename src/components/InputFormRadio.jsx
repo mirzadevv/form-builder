@@ -6,7 +6,7 @@ const InputFormRadio = ({ name, id, type, caption, options, onChange }) => {
       <p className="caption">{caption}</p>
       <div className="fields">
         {options.map((option) => (
-          <div className="form-check">
+          <div className="form-check" key={option.key}>
             <input
               name={name}
               id={id}
