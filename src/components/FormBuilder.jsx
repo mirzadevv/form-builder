@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import InputFormGroup from "./InputFormGroup";
 import InputFormRadio from "./InputFormRadio";
+import InputFormSelect from "./InputFormSelect";
 const FormBuilder = () => {
   const [formData, setFormData] = useState({});
   const handleChange = (e) => {
@@ -50,25 +51,22 @@ const FormBuilder = () => {
           { key: 1, value: "male", label: "Male" },
           { key: 2, value: "female", label: "Female" },
         ]}
+        onChange={handleChange}
       />
 
-      <div className="form-group">
-        <label for="state" className="caption">
-          Which state do you live in?
-        </label>
-        <select
-          className="form-control"
-          id="state"
-          name="state"
-          onChange={handleChange}
-        >
-          <option value="california">California</option>
-          <option value="texas">Texas</option>
-          <option value="florida">Florida</option>
-          <option value="newyork">Newyork</option>
-          <option value="pennsylvania">Pennsylvania</option>
-        </select>
-      </div>
+      <InputFormSelect
+        name="state"
+        id="state"
+        caption="Which state do you live in?"
+        options={[
+          { key: 1, value: "california", label: "California" },
+          { key: 2, value: "texas", label: "Texas" },
+          { key: 3, value: "florida", label: "Florida" },
+          { key: 4, value: "newyork", label: "Newyork" },
+          { key: 5, value: "pennsylvania", label: "Pennsylvania" },
+        ]}
+        onChange={handleChange}
+      />
 
       <br />
       <button type="submit" className="btn btn-primary">
