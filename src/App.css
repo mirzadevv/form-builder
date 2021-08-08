@@ -20,3 +20,7 @@
 .form-check {
   margin-right: 1rem;
 }
+
+.error-message {
+  color: red;
+}
