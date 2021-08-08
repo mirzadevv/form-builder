@@ -75,8 +75,6 @@ const FormBuilder = ({ formElements, onSubmit }) => {
     return Object.keys(returnedErrors).length === 0 ? null : returnedErrors;
   }
 
-  console.log(errors);
-
   return (
     <form onSubmit={doSubmit}>
       {formElements.map((formElement) => {
@@ -87,6 +85,7 @@ const FormBuilder = ({ formElements, onSubmit }) => {
               name={formElement.name}
               id={formElement.id}
               label={formElement.label}
+              error={errors[formElement.name]}
               onChange={handleChange}
             />
           );
@@ -101,6 +100,7 @@ const FormBuilder = ({ formElements, onSubmit }) => {
               type={formElement.type}
               caption={formElement.caption}
               options={formElement.options}
+              error={errors[formElement.name]}
               onChange={handleChange}
             />
           );
@@ -114,12 +114,12 @@ const FormBuilder = ({ formElements, onSubmit }) => {
               id={formElement.id}
               caption={formElement.caption}
               options={formElement.options}
+              error={errors[formElement.name]}
               onChange={handleChange}
             />
           );
         }
       })}
-
       <br />
       <button type="submit" className="btn btn-primary">
         Submit
