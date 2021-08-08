@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import InputFormGroup from "./InputFormGroup";
 const FormBuilder = () => {
   const [formData, setFormData] = useState({});
   const handleChange = (e) => {
@@ -11,61 +12,33 @@ const FormBuilder = () => {
 
   return (
     <form>
-      <div className="form-elements-container">
-        <div className="form-group">
-          <label htmlFor="firstname" className="caption">
-            Firstname:
-          </label>
-          <input
-            name="firstname"
-            id="firstname"
-            className="form-control"
-            onChange={handleChange}
-          />
-        </div>
-      </div>
+      <InputFormGroup
+        name="firstname"
+        id="firstname"
+        label="FirstName:"
+        onChange={handleChange}
+      />
 
-      <div className="form-elements-container">
-        <div className="form-group">
-          <label htmlFor="lastname" className="caption">
-            Lastname:
-          </label>
-          <input
-            name="lastname"
-            id="lastname"
-            className="form-control"
-            onChange={handleChange}
-          />
-        </div>
-      </div>
+      <InputFormGroup
+        name="lastname"
+        id="lastname"
+        label="Lastname:"
+        onChange={handleChange}
+      />
 
-      <div className="form-elements-container">
-        <div className="form-group">
-          <label htmlFor="age" className="caption">
-            Age:
-          </label>
-          <input
-            name="age"
-            id="age"
-            className="form-control"
-            onChange={handleChange}
-          />
-        </div>
-      </div>
+      <InputFormGroup
+        name="age"
+        id="age"
+        label="Age:"
+        onChange={handleChange}
+      />
 
-      <div className="form-elements-container">
-        <div className="form-group">
-          <label htmlFor="email" className="caption">
-            Email:
-          </label>
-          <input
-            name="email"
-            id="email"
-            className="form-control"
-            onChange={handleChange}
-          />
-        </div>
-      </div>
+      <InputFormGroup
+        name="email"
+        id="email"
+        label="Email:"
+        onChange={handleChange}
+      />
 
       <div className="form-elements-container">
         <p className="caption">what's your gender?</p>
