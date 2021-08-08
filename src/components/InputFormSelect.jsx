@@ -2,7 +2,7 @@ import React from "react";
 const InputFormSelect = ({ name, id, caption, options, onChange }) => {
   return (
     <div className="form-group">
-      <label for={id} className="caption">
+      <label htmlFor={id} className="caption">
         {caption}
       </label>
       <select className="form-control" id={id} name={name} onChange={onChange}>
