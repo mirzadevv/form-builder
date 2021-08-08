@@ -14,8 +14,8 @@ const App = () => {
   const handleSubmit = (formData) => {
     setReturnedFormData(formData);
     alert("Data Returned Successfully");
-    console.log("Returned Data", returnedFormData);
   };
+  console.log("Returned Data", returnedFormData);
 
   return (
     <div className="app-container">
