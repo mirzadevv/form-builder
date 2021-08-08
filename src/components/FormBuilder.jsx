@@ -1,5 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 const FormBuilder = () => {
+  const [formData, setFormData] = useState({});
+  const handleChange = (e) => {
+    const newFormData = { ...formData };
+    newFormData[e.currentTarget.name] = e.currentTarget.value;
+    setFormData(newFormData);
+  };
+
+  console.log(formData);
+
   return (
     <form>
       <div className="form-elements-container">
@@ -7,7 +16,12 @@ const FormBuilder = () => {
           <label htmlFor="firstname" className="caption">
             Firstname:
           </label>
-          <input name="firstname" id="firstname" className="form-control" />
+          <input
+            name="firstname"
+            id="firstname"
+            className="form-control"
+            onChange={handleChange}
+          />
         </div>
       </div>
 
@@ -16,7 +30,12 @@ const FormBuilder = () => {
           <label htmlFor="lastname" className="caption">
             Lastname:
           </label>
-          <input name="lastname" id="lastname" className="form-control" />
+          <input
+            name="lastname"
+            id="lastname"
+            className="form-control"
+            onChange={handleChange}
+          />
         </div>
       </div>
 
@@ -25,7 +44,12 @@ const FormBuilder = () => {
           <label htmlFor="age" className="caption">
             Age:
           </label>
-          <input name="age" id="age" className="form-control" />
+          <input
+            name="age"
+            id="age"
+            className="form-control"
+            onChange={handleChange}
+          />
         </div>
       </div>
 
@@ -34,7 +58,12 @@ const FormBuilder = () => {
           <label htmlFor="email" className="caption">
             Email:
           </label>
-          <input name="email" id="email" className="form-control" />
+          <input
+            name="email"
+            id="email"
+            className="form-control"
+            onChange={handleChange}
+          />
         </div>
       </div>
 
@@ -46,7 +75,9 @@ const FormBuilder = () => {
               name="gender"
               id="gender"
               type="radio"
+              value="male"
               className="form-check-input"
+              onChange={handleChange}
             />
             <label htmlFor="gender">Male</label>
           </div>
@@ -55,7 +86,9 @@ const FormBuilder = () => {
               name="gender"
               id="gender"
               type="radio"
+              value="female"
               className="form-check-input"
+              onChange={handleChange}
             />
             <label htmlFor="gender">Female</label>
           </div>
@@ -65,7 +98,12 @@ const FormBuilder = () => {
         <label for="state" className="caption">
           Which state do you live in?
         </label>
-        <select className="form-control" id="state" name="state">
+        <select
+          className="form-control"
+          id="state"
+          name="state"
+          onChange={handleChange}
+        >
           <option value="california">California</option>
           <option value="texas">Texas</option>
           <option value="florida">Florida</option>
